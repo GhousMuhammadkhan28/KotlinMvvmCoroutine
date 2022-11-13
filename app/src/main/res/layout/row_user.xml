@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.sample.kotlinmvvmcoroutine.User" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/idTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{ `ID : `+data.id }"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{ `Name : `+data.name }"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/idTv"
+
+                ></androidx.appcompat.widget.AppCompatTextView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/emailTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{ `Email : `+data.email }"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameTv"></androidx.appcompat.widget.AppCompatTextView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#22808000"
+            app:layout_constraintTop_toBottomOf="@id/mainL"></View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
